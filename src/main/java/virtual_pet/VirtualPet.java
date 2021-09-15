@@ -1,16 +1,17 @@
 package virtual_pet;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class VirtualPet {
     private String name;
-    private String description;
     public int hunger;
     public int thirst;
     public int boredom;
     private boolean isAlive;
 
-    public VirtualPet(String name, String description) {
+    public VirtualPet(String name) {
         this.name = "Draco";
-        this.description = "Not Malfoy.";
         hunger = 50;
         thirst = 50;
         boredom = 50;
@@ -21,7 +22,7 @@ public class VirtualPet {
         System.out.println("Welcome to the Dragon Shelter!  Here's some instructions for you: ");
     }
 
-    public static void giveFood() {
+    public void giveFood() {
         if(hunger >= 100) {
             hunger = 100;
             System.out.println("My belly is full, choose another action!");
@@ -35,7 +36,7 @@ public class VirtualPet {
         }
     }
 
-    public static void giveWater() {
+    public void giveWater() {
         if(thirst >= 100) {
             thirst = 100;
             System.out.println("I'm not thirsty!  Do something else!");
@@ -50,7 +51,7 @@ public class VirtualPet {
         }
     }
 
-    public static void playWith() {
+    public void playWith() {
         if(boredom >= 100) {
             boredom = 100;
             System.out.println("I'm entertained enough!  Do something else!");
@@ -65,7 +66,7 @@ public class VirtualPet {
         }
     }
 
-    public static void doNothing() {
+    public  void doNothing() {
         tick();
     }
 
@@ -95,10 +96,6 @@ public class VirtualPet {
 
     public String getName() {
         return name;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public int getHunger() {
